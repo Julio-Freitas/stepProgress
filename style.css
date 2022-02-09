@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #212121;
+}
+
+h1 {
+  font-family: monospace;
+  font-size: 50px;
+  color: #f2f2f2;
+}
+
+.checks {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+.checks input {
+  cursor: pointer;
+}
+
+.checks-item {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.checks-item input {
+  width: 25px;
+  height: 25px;
+}
+
+.checks .checks-item:first-child {
+  margin-top: 0;
+}
+
+.checks-item.noCompleted::before,
+.checks-item::after {
+  content: " ";
+  position: absolute;
+  display: inline-flex;
+  margin: -4px 0;
+  width: 0px;
+  height: 0px;
+  border: 1px solid gray;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-style: dashed;
+  top: 26px;
+}
+
+.checks-item.noCompleted::before {
+  height: 80px;
+}
+
+.checks-item.completed::after {
+  border-style: solid;
+  border-color: blue;
+  transition: 0.5s;
+  height: 80px;
+  top: 20px;
+}
